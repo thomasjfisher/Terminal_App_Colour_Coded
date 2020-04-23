@@ -1,56 +1,47 @@
-# require 'colorize'
-# require 'colorized_string'
-
-# words = ["red".colorize(:blue),"red".colorize(:green), "red".colorize(:red),
-#          "red".colorize(:black), "blue".colorize(:yellow), "yellow".colorize(:green),
-#          "green".colorize(:red), "purple".colorize(:black), "brown".colorize(:magenta),
-#          "pink".colorize(:cyan)].shuffle.first
-# puts words
-# # # colours = [.colorize(:red), .colorize(:blue), .colorize(:yellow), .colorize(:green)].shuffle.first
-# # # puts colours
-
-# # p String.colors 
-
-coloured_word = "Red"
-guess = ""
-guess_count = 0
-guess_limit = 3
-out_of_guesses = false
-p coloured_word
 
 
-puts "Enter your guess! You have 3 guesses! Use them wisely"
 
-while guess != coloured_word and !out_of_guesses
-	
-		
-	if guess_count < guess_limit
-		guess = gets.chomp.capitalize()
-		guess_count +=1
-		
-			if
-				guess_count == 1
-				puts "Ok, 2 more tries! We can do this!"
-			elsif
-				guess_count == 2
-				puts "Alright. You're scaring me now, 1 more guess!!"
-			elsif
-				guess_count == 3
-				puts "I said use them wisely!!!"
-			elsif 
-				guess == true
-				next
+
+# Pseudocode
+# 1. menu ->  Instructions to play the game, explaining what the game is and how can the exit game
+# 2. display a random colour ( text and color should n't match) - 3 sec
+# 3. clear the screen
+# 4. print a message
+# 5. get user input (answer)
+# 6. match user input with the answer
+# 7. increment counter
+#  7. if answer was correct show next with counter(2,3,4,5) question
+
+
+# origin code  : non dry code
+require 'colorize'
+require 'colorized_string'
+
+words= ["red", "green", "blue"]
+colors = [:blue, :yellow, :green]
+
+counter = 1
+wrong_answer = 0
+while counter <= 5 #true
+        word = words.sample #red
+        color = colors.sample  #yellow
+		if word != color
+            puts word.colorize(color)
+            # figure out how to clear terminal
+			puts "enter your guess"
+			user_input = gets.chomp  #red
+			if word == user_input
+                puts "correct answer"
+                counter += 1
+                wrong_answer = 0
+			else
+                puts "wrong answer"
+                # think how would you hadle wrong answers
+                wrong_answer +=1
+                if wrong_answer == 3
+                    puts "game over"
+                    break
+                end
 			end
-		# puts "You have used #{guess_count} of 3 guesses!"
-		else 
-			out_of_guesses = true
 		end
-	
 end
-
-	if out_of_guesses
-		puts "You lose. :("
-	else 
-		puts "You Won!"
-	end
-
