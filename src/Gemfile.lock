@@ -1,0 +1,19 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    colorize (0.8.1)
+    concurrent-ruby (1.1.6)
+    faker (2.11.0)
+      i18n (>= 1.6, < 2)
+    i18n (1.8.2)
+      concurrent-ruby (~> 1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  colorize (~> 0.8.1)
+  faker (~> 2.11)
+
+BUNDLED WITH
+   2.1.4
