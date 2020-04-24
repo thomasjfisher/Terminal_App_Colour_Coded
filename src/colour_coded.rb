@@ -54,9 +54,9 @@ def clear_terminal
     	word = words.sample #red
 		color = colors.sample  #yellow
 		
-		if word != color
+		if word != color 
 			puts "The word to remember is ..."
-			sleep 1
+			sleep 2
 			clear_terminal
 			puts word.colorize(color)
 			sleep 1
@@ -64,12 +64,13 @@ def clear_terminal
            	puts "Please enter your guess!"
 			user_input = gets.chomp 
 
-			if word == user_input
+			if word == user_input 
 				puts "Well done! Keep it up!"
 				sleep 1
 				clear_terminal
                 counter += 1
-                wrong_answer = 0
+				wrong_answer = 0
+				guess_count = 1
 			else
 				puts "Oh no! That's not right!"
 				sleep 1
@@ -91,11 +92,14 @@ def clear_terminal
 							next
 						elsif
 							play_again == 'n'
-							exit
+							puts "Goodbye!"
+						else
+							puts "Please enter a valid command [y/n]"
+						end	
 					else
                 end
 			end
 		end
 	end
-end
+
 	

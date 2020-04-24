@@ -18,22 +18,36 @@ end
 # sleep 2
 # clear_terminal
 # sleep 1
-puts "Would you like to do?"
-sleep 1
+user_main_menu_select = ""
+while user_main_menu_select !=3
 
-puts "1. Play Game"
-puts "2. Read Rules"
-puts "3. Quit"
-sleep 1
-puts "Enter your selection [1,2,3]"
-user_main_menu_select = gets.to_i
+    puts "Would you like to do?"
+    sleep 1
+    puts
+    puts "1. Play Game"
+    puts
+    puts "2. Read Rules"
+    puts
+    puts "3. Quit"
+    sleep 1
+    puts "Please enter your selection: [1,2,3]"
+    user_main_menu_select = gets.to_i
+    sleep 1
 
-if user_main_menu_select == 1
-    puts "GET READY!"
-elsif user_main_menu_select == 2
-    puts "Rules"
-else user_main_menu_select == 3
-    exit
+    if user_main_menu_select == 1
+        puts "GET READY!"
+        sleep 1
+    elsif user_main_menu_select == 2
+        puts "Rules"
+        sleep 1
+    elsif user_main_menu_select == 3
+        exit
+    else
+        clear_terminal
+        puts "Please enter a valid selection: [1,2,3]"
+        sleep 2
+        
+    end
 end
 # puts "1. Play Colour Coded"
 # puts "2. See 'Rules"
