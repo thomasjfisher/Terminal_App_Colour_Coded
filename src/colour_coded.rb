@@ -22,19 +22,7 @@ def clear_terminal
 	Gem.win_platform? ? (system "cls") : (system "clear")
 	
 end
-# ------ Menu
-# play_again = y
-# while play_again == y
-# def yes? response
-# 	case response
-# 	  when "y", "Y", "yes", "Yes", "YES"
-# 		return true
-# 	  when "n", "N", "no", "No", "NO"
-# 		return false
-# 	  else
-# 		puts "Please enter yes or no:".colorize(:light_red)
-# 		yes?(gets.chomp)
-# 	end
+
   
 clear_terminal
 puts "Welcome"
@@ -47,13 +35,14 @@ puts "Colour Coded"
 sleep 3
 puts "Would you like to play? [y/n]"
 user_play = gets.chomp
-
+	if user_play == 'n'	
+	exit
+	end
 words= ["red", "green", "blue"]
-colors = [:blue, :yellow, :green,]
-colors = [:black, :light_black, :red, :light_red, :green, :light_green,
-			:yellow, :light_yellow, :blue, :light_blue, :magenta, :light_magenta, :cyan, :light_cyan]
+colors = [:black, :light_black, :red, :light_red, :green, :light_green, :yellow, :light_yellow, :blue, :light_blue, :magenta, :light_magenta, :cyan, :light_cyan]
 counter = 1
 wrong_answer = 0
+guess_count = 1
 
 #defining method to clear the terminal
 def clear_terminal
@@ -61,36 +50,48 @@ def clear_terminal
 	
  end
 
-		while counter <= 5 #true
-        word = words.sample #red
+	while counter <= 5 #true
+    	word = words.sample #red
 		color = colors.sample  #yellow
 		
 		if word != color
-			puts word.colorize(color)
+			puts "The word to remember is ..."
 			sleep 1
 			clear_terminal
-			
-            # figure out how to clear terminal
-			puts "enter your guess"
-			user_input = gets.chomp  #red
+			puts word.colorize(color)
+			sleep 1
+			clear_terminal			
+           	puts "Please enter your guess!"
+			user_input = gets.chomp 
+
 			if word == user_input
-				puts "correct answer"
+				puts "Well done! Keep it up!"
 				sleep 1
 				clear_terminal
                 counter += 1
                 wrong_answer = 0
 			else
-                puts "wrong answer"
+				puts "Oh no! That's not right!"
+				sleep 1
+				clear_terminal
+				puts "Guess Count: #{guess_count} of 3!"
+				sleep 1
+				clear_terminal
                 # think how would you hadle wrong answers
-                wrong_answer +=1
+				wrong_answer +=1
+				guess_count +=1
                 if wrong_answer == 3
 					puts "game over"
+					sleep 2
 					clear_terminal
 					puts "Would you like to play again? [y/n]"
 					play_again = gets.chomp
-
-					if play_again == 'n'
-					break
+						if play_again == 'y'
+							guess_count = 1
+							next
+						elsif
+							play_again == 'n'
+							exit
 					else
                 end
 			end
