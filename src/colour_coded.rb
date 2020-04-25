@@ -3,7 +3,8 @@ require 'colorized_string'
 require 'tty-prompt'
 require 'tty-cursor'
 require 'launchy'
-require 'lolcat'
+require 'lolize/auto'
+
 
 prompt = TTY::Prompt.new
 
@@ -12,16 +13,20 @@ def clear_terminal
 	
 end
   
-# clear_terminal
-# puts "Welcome"
-# sleep 1
-# clear_terminal
-# puts "To"
-# sleep 1
-# clear_terminal
-# puts "Colour Coded"
-# sleep 3
-
+clear_terminal
+puts "Welcome"
+sleep 1
+clear_terminal
+puts "To"
+sleep 1
+clear_terminal
+puts "
+	____ ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ 
+	||C |||O |||L |||O |||U |||R |||       |||C |||O |||D |||E |||D ||
+	||__|||__|||__|||__|||__|||__|||_______|||__|||__|||__|||__|||__||
+	|/__\\|/__\\|/__\\|/__\\|/__\\|/__\\|/_______\\|/__\\|/__\\|/__\\|/__\\|/__\\|"
+sleep 3
+puts
 puts "Would you like to play? [y/n]"
 user_play = gets.chomp.downcase
 	while user_play != 'y'	&& user_play != 'n'
@@ -48,29 +53,29 @@ end
 		
 		if word != color 
 			puts "The word to remember is ..."
-			# sleep 2
-			# clear_terminal
+			sleep 2
+			clear_terminal
 			print word.colorize(color) + " "
 			
-			# sleep 1
-			# clear_terminal			
+			sleep 1
+			clear_terminal			
            	puts "Please enter your guess!"
 			user_input = gets.chomp.downcase
 
 			if word == user_input 
 				puts "Well done! Keep it up!"
-				# sleep 1
-				# clear_terminal
+				sleep 1
+				clear_terminal
                 counter += 1
 				wrong_answer = 0
 				guess_count = 1
 			else
 				puts "Oh no! That's not right!"
-				# sleep 1
-				# clear_terminal
+				sleep 1
+				clear_terminal
 				puts "Guess Count: #{guess_count} of 3!"
-				# sleep 1
-				# clear_terminal
+				sleep 1
+				clear_terminal
                 
 				wrong_answer +=1
 				guess_count +=1
