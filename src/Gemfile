@@ -8,6 +8,11 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 gem "colorize", "~> 0.8.1"
 
-gem "faker", "~> 2.11"
-
 gem "tty-prompt", "~> 0.21.0"
+
+gem "tty-cursor", "~> 0.7.1"
+
+gem "launchy", "~> 2.5"
+
+
+gem "lolcat", "~> 100.0"
