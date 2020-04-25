@@ -42,7 +42,16 @@ case method
         when 1
 
 
-
+                words_1 = ["Red", "Green", "Blue", "Brown", "Pink", "Purple", "Orange"]
+                colors_1 = [:black, :light_black, :red, :green, :yellow, :blue, :magenta, :light_magenta, :cyan, :light_cyan]
+                words_2 = ["Red", "Green", "Blue", "Brown", "Pink", "Purple", "Orange"]
+                colors_2 = [:black, :light_black, :red, :green, :yellow, :blue, :magenta, :light_magenta, :cyan, :light_cyan]
+                words_3 = ["Red", "Green", "Blue", "Brown", "Pink", "Purple", "Orange"]
+                colors_3 = [:black, :light_black, :red, :green, :yellow, :blue, :magenta, :light_magenta, :cyan, :light_cyan]
+                words_4 = ["Red", "Green", "Blue", "Brown", "Pink", "Purple", "Orange"]
+                colors_4 = [:black, :light_black, :red, :green, :yellow, :blue, :magenta, :light_magenta, :cyan, :light_cyan]
+                words_5 = ["Red", "Green", "Blue", "Brown", "Pink", "Purple", "Orange"]
+                colors_5  = [:black, :light_black, :red, :green, :yellow, :blue, :magenta, :light_magenta, :cyan, :light_cyan]
 -----------------------
 
 # # require 'colorize'

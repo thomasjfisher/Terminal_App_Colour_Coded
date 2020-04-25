@@ -1,23 +1,24 @@
 require 'colorize'
 require 'colorized_string'
-
+require 'tty-prompt'
 
 def clear_terminal
 	Gem.win_platform? ? (system "cls") : (system "clear")
 	
 end
 
-# clear_terminal
-# puts "Welcome"
-# sleep 1
-# clear_terminal
-# puts "To"
-# sleep 1
-# clear_terminal
-# puts "Colour Coded"
-# sleep 2
-# clear_terminal
-# sleep 1
+clear_terminal
+puts "Welcome"
+sleep 1
+clear_terminal
+puts "To"
+sleep 1
+clear_terminal
+puts "Colour Coded"
+sleep 2
+clear_terminal
+sleep 1
+
 user_main_menu_select = ""
 while user_main_menu_select !=3
 
@@ -31,6 +32,7 @@ while user_main_menu_select !=3
     puts "3. Quit"
     sleep 1
     puts "Please enter your selection: [1,2,3]"
+    
     user_main_menu_select = gets.to_i
     sleep 1
 
@@ -40,6 +42,7 @@ while user_main_menu_select !=3
     elsif user_main_menu_select == 2
         puts "Rules"
         sleep 1
+        puts "Welcome to Colour Coded.\nRules are:"
     elsif user_main_menu_select == 3
         exit
     else

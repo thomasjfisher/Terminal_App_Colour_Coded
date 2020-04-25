@@ -63,8 +63,8 @@ end
 			if counter == 1
 				print word.colorize(color)
 			elsif counter == 2
-				print word.colorize(color)
-				print word.colorize(color)
+				puts word.colorize(color)
+				puts word.colorize(color)
 			elsif counter == 3
 				print word.colorize(color) * 3
 			elsif counter == 4
