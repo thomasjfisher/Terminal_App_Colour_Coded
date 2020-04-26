@@ -1,16 +1,13 @@
+Pseudo Code:
 
-
-
-
-# # Pseudocode
-# # 1. menu ->  Instructions to play the game, explaining what the game is and how can the exit game
-# # 2. display a random colour ( text and color should n't match) - 3 sec
-# # 3. clear the screen
-# # 4. print a message
-# # 5. get user input (answer)
-# # 6. match user input with the answer
-# # 7. increment counter
-# #  7. if answer was correct show next with counter(2,3,4,5) question
+# 1. menu ->  Instructions to play the game, explaining what the game is and how can the exit game
+# 2. display a random colour ( text and color should n't match) - 3 sec
+# 3. clear the screen
+# 4. print a message
+# 5. get user input (answer)
+# 6. match user input with the answer
+# 7. increment counter
+#  7. if answer was correct show next with counter(2,3,4,5) question
 
 
 # print to screen the coloured word. 
