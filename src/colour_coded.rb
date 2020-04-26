@@ -79,7 +79,7 @@ colors = [:black, :light_black, :red, :green, :yellow, :blue, :magenta, :light_m
 counter = 0
 wrong_answer = 0
 guess_count = 1
-correct_guesses_needed = 1
+correct_guesses_needed = 4
 
 
 
