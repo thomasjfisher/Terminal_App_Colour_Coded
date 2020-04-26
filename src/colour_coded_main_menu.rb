@@ -2,8 +2,6 @@
 require_relative 'colour_coded.rb'
 
 
-require 'colorize'
-require 'colorized_string'
 require 'tty-prompt'
 require 'tty-cursor'
 require 'lolize/auto'
@@ -16,36 +14,32 @@ def clear_terminal
 	
 end
 
-
-
-
-
-clear_terminal
-puts "Welcome to"
-puts "
-		 ____ ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ 
-		||C |||O |||L |||O |||U |||R |||       |||C |||O |||D |||E |||D ||
-		||__|||__|||__|||__|||__|||__|||_______|||__|||__|||__|||__|||__||
-		|/__\\|/__\\|/__\\|/__\\|/__\\|/__\\|/_______\\|/__\\|/__\\|/__\\|/__\\|/__\\|"
-sleep 2
-puts
-
-
-user_main_menu_select = ""
-while user_main_menu_select !=3    
+    clear_terminal
+    puts "Welcome to"
+    puts "
+             ____ ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ 
+            ||C |||O |||L |||O |||U |||R |||       |||C |||O |||D |||E |||D ||
+            ||__|||__|||__|||__|||__|||__|||_______|||__|||__|||__|||__|||__||
+            |/__\\|/__\\|/__\\|/__\\|/__\\|/__\\|/_______\\|/__\\|/__\\|/__\\|/__\\|/__\\|"
+    sleep 2
+    puts
     
-    puts "What would you like to do?"
-    sleep 1
-    puts
-    puts "1. Play Game"
-    puts
-    puts "2. Read Rules"
-    puts
-    puts "3. Quit"
-    puts 
-    puts "Please enter your selection: [1,2,3]"
-    puts 
-   
+    
+    user_main_menu_select = ""
+    while user_main_menu_select !=3    
+        
+        puts "What would you like to do?"
+        sleep 1
+        puts
+        puts "1. Play Game"
+        puts
+        puts "2. Read Rules"
+        puts
+        puts "3. Quit"
+        puts 
+        puts "Please enter your selection: [1,2,3]"
+        puts 
+ 
     user_main_menu_select = gets.to_i
     sleep 1
 
@@ -59,7 +53,7 @@ while user_main_menu_select !=3
 			 puts "Welcome to"
 			 sleep 1
        puts  "
-        ____ ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ 
+         ____ ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ 
         ||C |||O |||L |||O |||U |||R |||       |||C |||O |||D |||E |||D ||
         ||__|||__|||__|||__|||__|||__|||_______|||__|||__|||__|||__|||__||
         |/__\\|/__\\|/__\\|/__\\|/__\\|/__\\|/_______\\|/__\\|/__\\|/__\\|/__\\|/__\\|"
@@ -88,7 +82,7 @@ while user_main_menu_select !=3
         puts "Goodbye from"
         sleep 1
         puts "
-        ____ ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ 
+         ____ ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ 
         ||C |||O |||L |||O |||U |||R |||       |||C |||O |||D |||E |||D ||
         ||__|||__|||__|||__|||__|||__|||_______|||__|||__|||__|||__|||__||
         |/__\\|/__\\|/__\\|/__\\|/__\\|/__\\|/_______\\|/__\\|/__\\|/__\\|/__\\|/__\\|"
@@ -103,4 +97,5 @@ while user_main_menu_select !=3
         sleep 2
         
     end
+ 
 end
