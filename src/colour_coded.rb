@@ -1,95 +1,92 @@
-# require 'colorize'
-# require 'colorized_string'
 require 'tty-prompt'
 require 'tty-cursor'
 require 'launchy'
 require 'lolize/auto'
 
-# DEBUG = 1
-# if DEBUG 
-# 	puts IGNORE, DEBUGGING
-# end
+module ColourCodedGame
+	def grats
+		cheeky_grats =["Hmm, have you done this before?",	"Hey! No peeking! Oh wait, no... I guess thats allowed...", "beep beep bop bo boop", "Woah, how'd you get that?", "nice", "Oh, and here I thought it was: up up down zero zero back?", "Still going hey?"].shuffle
+		puts cheeky_grats[0]
+		puts	
+	end
 
+	def nope
+		cheeky_nope = ["(´。＿。｀)", '(¬_¬")', "(╯°□°）╯︵ ┻━┻", "(* ￣︿￣)"].shuffle
+		puts cheeky_nope[0]
+		puts 
+	end
+
+	def cc_keyboard
+		puts "
+		 ____ ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ 
+		||C |||O |||L |||O |||U |||R |||       |||C |||O |||D |||E |||D ||
+		||__|||__|||__|||__|||__|||__|||_______|||__|||__|||__|||__|||__||
+		|/__\\|/__\\|/__\\|/__\\|/__\\|/__\\|/_______\\|/__\\|/__\\|/__\\|/__\\|/__\\|"
+	end
+
+	def tom_sleep(number)
+		if DEBUG
+			return
+		end
+		sleep(number)
+		puts
+	end
+
+
+
+	# This command below is allowing me to call to clear my terminal.
+
+	DEBUG = nil
+
+	def run_game
+
+		def clear_terminal
+			Gem.win_platform? ? (system "cls") : (system "clear")	
+		end
+
+		
 prompt = TTY::Prompt.new
 
 
-
-def grats
-	cheeky_grats =["Hmm, have you done this before?",	"Hey! No peeking! Oh wait, no... I guess thats allowed...", "beep beep bop bo boop", "Woah, how'd you get that?", "nice", "Oh, and here I thought it was: up up down zero zero back?", "Still going hey?"].shuffle
-	puts cheeky_grats[0]
-	puts	
-end
-
-def nope
-	cheeky_nope = ["(´。＿。｀)", '(¬_¬")', "(╯°□°）╯︵ ┻━┻", "(* ￣︿￣)"].shuffle
-	puts cheeky_nope[0]
-	puts 
-end
-
-def cc_keyboard
-	puts "
-    	____ ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ 
-	||C |||O |||L |||O |||U |||R |||       |||C |||O |||D |||E |||D ||
-	||__|||__|||__|||__|||__|||__|||_______|||__|||__|||__|||__|||__||
-	|/__\\|/__\\|/__\\|/__\\|/__\\|/__\\|/_______\\|/__\\|/__\\|/__\\|/__\\|/__\\|"
-end
-
-def tom_sleep(number)
-	sleep(number) 
-end
-
-# This command below is allowing me to call to clear my terminal.
-def clear_terminal
-	Gem.win_platform? ? (system "cls") : (system "clear")	
-end
-clear_terminal
-# Asking my user their name before they start!
-name = (ARGV.length > 0) && ARGV[0]
-if !name
- puts "Hi! Before we get started, what is your name?"
- name = gets.chomp
-end
-puts "Hi #{name}, I hope you're ready!"
-tom_sleep 1
-clear_terminal
-tom_sleep 1
-puts
-puts "Welcome"
-tom_sleep 1
-clear_terminal
-puts "To"
-tom_sleep 1
-clear_terminal
-cc_keyboard
-tom_sleep 3
-puts
-#Command below is saying whilst the user input is not 'y' or 'n', loop until I get a 'y' or 'n'
-puts "Would you like to play, #{name}? [y/n]"
-user_play = gets.chomp.downcase
-	while user_play != 'y'	&& user_play != 'n'
-	puts "Invlaid command."
-	puts "Would you like to play? [y/n]"
-	user_play = gets.chomp.downcase
+	clear_terminal
+	# Asking my user their name before they start!
+	name = (ARGV.length > 0) && ARGV[0]
+	if !name
+		puts "Hi! Before we get started, what is your name?"
+		name = gets.chomp
 	end
-if user_play != 'y'
-	exit
-end
-words= %w[red green blue yellow pink purple orange]
-colors = [:black, :light_black, :red, :green, :yellow, :blue, :magenta, :light_magenta, :cyan, :light_cyan]
-counter = 0
-wrong_answer = 0
-guess_count = 1
-correct_guesses_needed = 4
-
-
+	tom_sleep 1
+	clear_terminal
+	puts "Welcome"
+	tom_sleep 1
+	puts "To"
+	tom_sleep 1
+	cc_keyboard
+	tom_sleep 3
+	puts
+	#Command below is saying whilst the user input is not 'y' or 'n', loop until I get a 'y' or 'n'
+	puts "Would you like to play, #{name}? [y/n]"
+	user_play = gets.chomp.downcase
+	while user_play != 'y'	&& user_play != 'n'
+		puts "Invlaid command."
+		puts "Would you like to play? [y/n]"
+		user_play = gets.chomp.downcase
+	end
+	if user_play != 'y'
+		exit
+	end
+	words= %w[red green blue yellow pink purple orange]
+	colors = [:black, :light_black, :red, :green, :yellow, :blue, :magenta, :light_magenta, :cyan, :light_cyan]
+	counter = 0
+	wrong_answer = 0
+	guess_count = 1
+	correct_guesses_needed = 5
 
 	while counter < 5
-    	word = words.shuffle 
+		word = words.shuffle 
 		color = colors.sample  
 		word = word[0..counter].join(" ")
-		
-					
-			
+				
 		if word != color 
 			clear_terminal
 			puts "Let's do this"
@@ -97,31 +94,36 @@ correct_guesses_needed = 4
 			puts		
 			clear_terminal	
 			puts "Remember to remember..."
-			p counter 
-			p wrong_answer
-			p guess_count
 
+			if DEBUG
+				p counter
+				p wrong_answer
+				p guess_count
+			end
 			puts
 			tom_sleep 2
-			print word + " "
-			
+			print word + " "		
 			tom_sleep 1
-			clear_terminal			
-			   puts "Please enter your guess!"
-			   puts
+			if DEBUG == nil
+				clear_terminal	
+			end
+					
+			puts "Please enter your guess!"
+			puts
 			user_input = gets.strip.downcase
 			puts
-
-			if word == user_input 
+			if DEBUG
+				user_input = word
+			end
+			if word == user_input 				
 				grats
 				tom_sleep 3
 				clear_terminal
-       	counter += 1
+				counter += 1
 				wrong_answer = 0
 				guess_count = 1
 			else
 				nope 
-				
 				tom_sleep 1
 				puts "Uh oh! That is incorrect!"
 				puts
@@ -130,8 +132,7 @@ correct_guesses_needed = 4
 				puts "Guess Count: #{guess_count} of 3!"
 				puts
 				tom_sleep 1
-				clear_terminal
-                
+				clear_terminal							
 				wrong_answer +=1
 				guess_count +=1
 			end
@@ -140,9 +141,7 @@ correct_guesses_needed = 4
 				puts "Game Over! (っ °Д °;)っ " * 100
 				tom_sleep 2
 			end
-					
-				
-				
+						
 			if counter == correct_guesses_needed
 				puts "You Won! (‾◡◝) " * 100								
 				tom_sleep 2
@@ -158,23 +157,26 @@ correct_guesses_needed = 4
 					puts "Would you like to play again? [y/n]"
 					play_again = gets.chomp.downcase		
 				end
+
 				if play_again == 'y'								
 					puts "Let's go again!"
 					counter = 0
 					wrong_answer = 0
-					guess_count = 0
+					guess_count = 1
 				elsif play_again != 'y'
 					puts "Thanks for playing"
-					tom_sleep 1
 					puts
 					cc_keyboard
 					tom_sleep 3
 					exit
 				end	
 			end
+		end
 	end
 end
+end
 
+
+			
 		
-	
 			
