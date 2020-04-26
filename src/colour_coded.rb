@@ -65,14 +65,15 @@ prompt = TTY::Prompt.new
 	tom_sleep 3
 	puts
 	#Command below is saying whilst the user input is not 'y' or 'n', loop until I get a 'y' or 'n'
-	puts "Would you like to play, #{name}? [y/n]"
+	puts "Are you ready to start, #{name}? [y/n]"
 	user_play = gets.chomp.downcase
 	while user_play != 'y'	&& user_play != 'n'
 		puts "Invlaid command."
-		puts "Would you like to play? [y/n]"
+		puts "Are you ready to start? [y/n]"
 		user_play = gets.chomp.downcase
 	end
 	if user_play != 'y'
+		puts "See you again soon!"
 		exit
 	end
 	words= %w[red green blue yellow pink purple orange]
@@ -99,8 +100,7 @@ prompt = TTY::Prompt.new
 				p counter
 				p wrong_answer
 				p guess_count
-			end
-			puts
+			end			
 			tom_sleep 2
 			print word + " "		
 			tom_sleep 1
@@ -139,12 +139,12 @@ prompt = TTY::Prompt.new
 
 			if wrong_answer == 3
 				puts "Game Over! (っ °Д °;)っ " * 100
-				tom_sleep 2
+				tom_sleep 5
 			end
 						
 			if counter == correct_guesses_needed
 				puts "You Won! (‾◡◝) " * 100								
-				tom_sleep 2
+				tom_sleep 5
 			end
 
 			if wrong_answer == 3 || counter == correct_guesses_needed
@@ -167,7 +167,7 @@ prompt = TTY::Prompt.new
 					puts "Thanks for playing"
 					puts
 					cc_keyboard
-					tom_sleep 3
+					tom_sleep 5
 					exit
 				end	
 			end

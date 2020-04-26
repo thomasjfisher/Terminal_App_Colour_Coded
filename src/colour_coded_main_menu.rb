@@ -15,25 +15,21 @@ def clear_terminal
 end
 
 
-# puts "WELCOME" * 5000
 
 
-# # clear_terminal
-# # puts "Welcome"
-# # sleep 1
-# # clear_terminal
-# # puts "To"
-# # sleep 1
-# # clear_terminal
-# # puts "Colour Coded"
-# # sleep 2
-# # clear_terminal
-# # sleep 1
+
+clear_terminal
+puts "
+		 ____ ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ 
+		||C |||O |||L |||O |||U |||R |||       |||C |||O |||D |||E |||D ||
+		||__|||__|||__|||__|||__|||__|||_______|||__|||__|||__|||__|||__||
+		|/__\\|/__\\|/__\\|/__\\|/__\\|/__\\|/_______\\|/__\\|/__\\|/__\\|/__\\|/__\\|"
+sleep 2
+puts
 
 
 user_main_menu_select = ""
-while user_main_menu_select !=3
-    
+while user_main_menu_select !=3    
     
     puts "What would you like to do?"
     sleep 1
@@ -51,15 +47,15 @@ while user_main_menu_select !=3
     sleep 1
 
     if user_main_menu_select == 1
-					sleep 1
-					include ColourCodedGame
-					ColourCodedGame::run_game
+			sleep 1
+			include ColourCodedGame
+			ColourCodedGame::run_game
 						
     elsif user_main_menu_select == 2
-       clear_terminal
-        puts "Welcome to"
-        sleep 1
-        puts  "
+			clear_terminal
+			 puts "Welcome to"
+			 sleep 1
+       puts  "
         ____ ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ 
         ||C |||O |||L |||O |||U |||R |||       |||C |||O |||D |||E |||D ||
         ||__|||__|||__|||__|||__|||__|||_______|||__|||__|||__|||__|||__||
@@ -102,16 +98,3 @@ while user_main_menu_select !=3
         
     end
 end
-# puts "1. Play Colour Coded"
-# puts "2. See 'Rules"
-# puts "3. Quit"
-
-# user_play = gets.chomp
-
-# if user_play == 1
-#     puts "Play the game!"
-# elsif user_play == 2
-#     puts "Here are the rules"
-# elsif user_play == 3
-#     puts "Cya next time!" 
-# end
