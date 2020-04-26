@@ -5,8 +5,38 @@ require 'tty-cursor'
 require 'launchy'
 require 'lolize/auto'
 
+# DEBUG = 1
+# if DEBUG 
+# 	puts IGNORE, DEBUGGING
+# end
 
 prompt = TTY::Prompt.new
+
+
+
+def grats
+	cheeky_grats =["Hmm, have you done this before?",	"Hey! No peeking! Oh wait, no... I guess thats allowed...", "beep beep bop bo boop", "Woah, how'd you get that?", "nice", "Oh, and here I thought it was: up up down zero zero back?", "Still going hey?"].shuffle
+	puts cheeky_grats[0]
+	puts	
+end
+
+def nope
+	cheeky_nope = ["(´。＿。｀)", '(¬_¬")', "(╯°□°）╯︵ ┻━┻", "(* ￣︿￣)"].shuffle
+	puts cheeky_nope[0]
+	puts 
+end
+
+def cc_keyboard
+	puts "
+    	____ ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ 
+	||C |||O |||L |||O |||U |||R |||       |||C |||O |||D |||E |||D ||
+	||__|||__|||__|||__|||__|||__|||_______|||__|||__|||__|||__|||__||
+	|/__\\|/__\\|/__\\|/__\\|/__\\|/__\\|/_______\\|/__\\|/__\\|/__\\|/__\\|/__\\|"
+end
+
+def tom_sleep(number)
+	sleep(number) 
+end
 
 # This command below is allowing me to call to clear my terminal.
 def clear_terminal
@@ -19,24 +49,19 @@ if !name
  puts "Hi! Before we get started, what is your name?"
  name = gets.chomp
 end
-# puts "Hi #{name}, I hope you're ready!"
-# sleep 1
-# clear_terminal
-# sleep 1
-# puts
-# puts "Welcome"
-# sleep 1
-# # clear_terminal
-# puts "To"
-# sleep 1
-# clear_terminal
-
-puts "
-	 ____ ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ 
-	||C |||O |||L |||O |||U |||R |||       |||C |||O |||D |||E |||D ||
-	||__|||__|||__|||__|||__|||__|||_______|||__|||__|||__|||__|||__||
-	|/__\\|/__\\|/__\\|/__\\|/__\\|/__\\|/_______\\|/__\\|/__\\|/__\\|/__\\|/__\\|"
-# sleep 3
+puts "Hi #{name}, I hope you're ready!"
+tom_sleep 1
+clear_terminal
+tom_sleep 1
+puts
+puts "Welcome"
+tom_sleep 1
+clear_terminal
+puts "To"
+tom_sleep 1
+clear_terminal
+cc_keyboard
+tom_sleep 3
 puts
 #Command below is saying whilst the user input is not 'y' or 'n', loop until I get a 'y' or 'n'
 puts "Would you like to play, #{name}? [y/n]"
@@ -54,6 +79,7 @@ colors = [:black, :light_black, :red, :green, :yellow, :blue, :magenta, :light_m
 counter = 0
 wrong_answer = 0
 guess_count = 1
+correct_guesses_needed = 1
 
 
 
@@ -67,7 +93,7 @@ guess_count = 1
 		if word != color 
 			clear_terminal
 			puts "Let's do this"
-			sleep 1			
+			tom_sleep 1			
 			puts		
 			clear_terminal	
 			puts "Remember to remember..."
@@ -76,84 +102,79 @@ guess_count = 1
 			p guess_count
 
 			puts
-			sleep 2
+			tom_sleep 2
 			print word + " "
 			
-			sleep 1
-			# clear_terminal			
+			tom_sleep 1
+			clear_terminal			
 			   puts "Please enter your guess!"
 			   puts
-			user_input = gets.chomp.downcase
+			user_input = gets.strip.downcase
 			puts
 
 			if word == user_input 
-				grats = ["Hmm, have you done this before?",	"Hey! No peeking! Oh wait, no... I guess thats allowed...", "beep beep bop bo boop", "Woah, how'd you get that?", "nice", "Oh, and here I thought it was: up up down zero zero back?", "Still going hey?"].shuffle
-				puts grats[0]
-				puts
-				sleep 3
-				# clear_terminal
-                counter += 1
+				grats
+				tom_sleep 3
+				clear_terminal
+       	counter += 1
 				wrong_answer = 0
 				guess_count = 1
 			else
-				nope = ["(´。＿。｀)", '(¬_¬")', "(╯°□°）╯︵ ┻━┻", "(* ￣︿￣)"].shuffle
-				puts nope[0]
-				puts 
+				nope 
 				
-				sleep 1
+				tom_sleep 1
 				puts "Uh oh! That is incorrect!"
 				puts
-				sleep 1
-				# clear_terminal
+				tom_sleep 1
+				clear_terminal
 				puts "Guess Count: #{guess_count} of 3!"
 				puts
-				sleep 1
-				# clear_terminal
+				tom_sleep 1
+				clear_terminal
                 
 				wrong_answer +=1
 				guess_count +=1
-			
-
-      	if wrong_answer == 2
-					puts "Game Over! (っ °Д °;)っ " #* 550
-					# sleep 5
-					# counter = 0
-				
-				
-					if counter == 4
-						puts "You Won! (‾◡◝) " #* 550					
-						# sleep 2
-						puts
-						
-						puts "Would you like to play again? [y/n]"
-						puts
-						play_again = gets.chomp.downcase
-								
-						if play_again != 'y'	&& play_again != 'n'
-								puts "Invlaid command."
-								puts "Would you like to play again? [y/n]"
-								user_play = gets.chomp.downcase
-								
-						elsif play_again == 'y'								
-									puts "Let's go again!"
-									counter = 0
-						elsif play_again != 'y'
-									puts "Thanks for playing"
-									sleep 1
-									puts
-									puts "
-											____ ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ 
-											||C |||O |||L |||O |||U |||R |||       |||C |||O |||D |||E |||D ||
-											||__|||__|||__|||__|||__|||__|||_______|||__|||__|||__|||__|||__||
-											|/__\\|/__\\|/__\\|/__\\|/__\\|/__\\|/_______\\|/__\\|/__\\|/__\\|/__\\|/__\\|"
-									sleep 3
-									exit
-						end
-					end
-				end
 			end
-		end
+
+			if wrong_answer == 3
+				puts "Game Over! (っ °Д °;)っ " * 100
+				tom_sleep 2
+			end
+					
+				
+				
+			if counter == correct_guesses_needed
+				puts "You Won! (‾◡◝) " * 100								
+				tom_sleep 2
+			end
+
+			if wrong_answer == 3 || counter == correct_guesses_needed
+				puts "Would you like to play again? [y/n]"
+				puts
+				play_again = gets.chomp.downcase
+
+				while play_again != 'y'	&& play_again != 'n'
+					puts "Invlaid command."
+					puts "Would you like to play again? [y/n]"
+					play_again = gets.chomp.downcase		
+				end
+				if play_again == 'y'								
+					puts "Let's go again!"
+					counter = 0
+					wrong_answer = 0
+					guess_count = 0
+				elsif play_again != 'y'
+					puts "Thanks for playing"
+					tom_sleep 1
+					puts
+					cc_keyboard
+					tom_sleep 3
+					exit
+				end	
+			end
 	end
+end
+
 		
 	
 			
