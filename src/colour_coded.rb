@@ -1,5 +1,5 @@
-require 'colorize'
-require 'colorized_string'
+# require 'colorize'
+# require 'colorized_string'
 require 'tty-prompt'
 require 'tty-cursor'
 require 'launchy'
@@ -10,27 +10,36 @@ prompt = TTY::Prompt.new
 
 # This command below is allowing me to call to clear my terminal.
 def clear_terminal
-	Gem.win_platform? ? (system "cls") : (system "clear")
-	
+	Gem.win_platform? ? (system "cls") : (system "clear")	
 end
-  
 clear_terminal
-puts "Welcome"
-sleep 1
-clear_terminal
-puts "To"
-sleep 1
-clear_terminal
+# Asking my user their name before they start!
+name = (ARGV.length > 0) && ARGV[0]
+if !name
+ puts "Hi! Before we get started, what is your name?"
+ name = gets.chomp
+end
+# puts "Hi #{name}, I hope you're ready!"
+# sleep 1
+# clear_terminal
+# sleep 1
+# puts
+# puts "Welcome"
+# sleep 1
+# # clear_terminal
+# puts "To"
+# sleep 1
+# clear_terminal
 
 puts "
 	 ____ ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ 
 	||C |||O |||L |||O |||U |||R |||       |||C |||O |||D |||E |||D ||
 	||__|||__|||__|||__|||__|||__|||_______|||__|||__|||__|||__|||__||
 	|/__\\|/__\\|/__\\|/__\\|/__\\|/__\\|/_______\\|/__\\|/__\\|/__\\|/__\\|/__\\|"
-sleep 3
+# sleep 3
 puts
-puts "Would you like to play? [y/n]"
 #Command below is saying whilst the user input is not 'y' or 'n', loop until I get a 'y' or 'n'
+puts "Would you like to play, #{name}? [y/n]"
 user_play = gets.chomp.downcase
 	while user_play != 'y'	&& user_play != 'n'
 	puts "Invlaid command."
@@ -47,11 +56,14 @@ wrong_answer = 0
 guess_count = 1
 
 
+
 	while counter < 5
     	word = words.shuffle 
 		color = colors.sample  
 		word = word[0..counter].join(" ")
 		
+					
+			
 		if word != color 
 			clear_terminal
 			puts "Let's do this"
@@ -59,9 +71,13 @@ guess_count = 1
 			puts		
 			clear_terminal	
 			puts "Remember to remember..."
+			p counter 
+			p wrong_answer
+			p guess_count
+
 			puts
 			sleep 2
-			print word.colorize(color) + " "
+			print word + " "
 			
 			sleep 1
 			# clear_terminal			
@@ -98,44 +114,46 @@ guess_count = 1
 				guess_count +=1
 			
 
-                if wrong_answer == 3
-					puts "Game Over (っ °Д °;)っ " #* 550
-					sleep 5
-					counter = 0
+      	if wrong_answer == 2
+					puts "Game Over! (っ °Д °;)っ " #* 550
+					# sleep 5
+					# counter = 0
 				
-				elsif counter == 5
-					puts "You Won! (‾◡◝) " #* 550					
-					sleep 2
-					puts
 				
-					puts "Would you like to play again? [y/n]"
-					puts
-					play_again = gets.chomp.downcase
-						while play_again != 'y'	&& play_again != 'n'
-							puts "Invlaid command."
-							puts "Would you like to play again? [y/n]"
-							user_play = gets.chomp.downcase
-						end
-								if play_again == 'y'								
+					if counter == 4
+						puts "You Won! (‾◡◝) " #* 550					
+						# sleep 2
+						puts
+						
+						puts "Would you like to play again? [y/n]"
+						puts
+						play_again = gets.chomp.downcase
+								
+						if play_again != 'y'	&& play_again != 'n'
+								puts "Invlaid command."
+								puts "Would you like to play again? [y/n]"
+								user_play = gets.chomp.downcase
+								
+						elsif play_again == 'y'								
 									puts "Let's go again!"
 									counter = 0
-								elsif play_again != 'y'
+						elsif play_again != 'y'
 									puts "Thanks for playing"
 									sleep 1
 									puts
 									puts "
-									____ ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ 
-									||C |||O |||L |||O |||U |||R |||       |||C |||O |||D |||E |||D ||
-									||__|||__|||__|||__|||__|||__|||_______|||__|||__|||__|||__|||__||
-									|/__\\|/__\\|/__\\|/__\\|/__\\|/__\\|/_______\\|/__\\|/__\\|/__\\|/__\\|/__\\|"
+											____ ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ 
+											||C |||O |||L |||O |||U |||R |||       |||C |||O |||D |||E |||D ||
+											||__|||__|||__|||__|||__|||__|||_______|||__|||__|||__|||__|||__||
+											|/__\\|/__\\|/__\\|/__\\|/__\\|/__\\|/_______\\|/__\\|/__\\|/__\\|/__\\|/__\\|"
 									sleep 3
 									exit
 						end
 					end
-				end	
+				end
 			end
-		end 
-	
+		end
+	end
 		
 	
 			
