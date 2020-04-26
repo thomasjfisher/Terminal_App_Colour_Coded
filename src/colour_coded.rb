@@ -34,19 +34,16 @@ module ColourCodedGame
 
 
 
-	# This command below is allowing me to call to clear my terminal.
 
+#used debug to move through the code faster when trying to debug, it held the sleeps and clear_terminals.
+#when set to nil, the code will run as normal. if given a true value the code will skip certain parts.
 	DEBUG = nil
 
 	def run_game
-
+		# This command below is allowing me to call to clear my terminal.
 		def clear_terminal
 			Gem.win_platform? ? (system "cls") : (system "clear")	
 		end
-
-		
-prompt = TTY::Prompt.new
-
 
 	clear_terminal
 	# Asking my user their name before they start!
@@ -76,6 +73,7 @@ prompt = TTY::Prompt.new
 		puts "See you again soon!"
 		exit
 	end
+	#Below are the words that will print to the screen
 	words= %w[red green blue yellow pink purple orange]
 	colors = [:black, :light_black, :red, :green, :yellow, :blue, :magenta, :light_magenta, :cyan, :light_cyan]
 	counter = 0
@@ -87,7 +85,7 @@ prompt = TTY::Prompt.new
 		word = words.shuffle 
 		color = colors.sample  
 		word = word[0..counter].join(" ")
-				
+			#if the word does not match the coulour of the words( red != red) it will go through with the code	
 		if word != color 
 			clear_terminal
 			puts "Let's do this"
@@ -136,7 +134,7 @@ prompt = TTY::Prompt.new
 				wrong_answer +=1
 				guess_count +=1
 			end
-
+			#here it will check if the user has won or lost. the game will end and ask the user if they want to play again.
 			if wrong_answer == 3
 				puts "Game Over! (っ °Д °;)っ " * 100
 				tom_sleep 5
@@ -151,7 +149,7 @@ prompt = TTY::Prompt.new
 				puts "Would you like to play again? [y/n]"
 				puts
 				play_again = gets.chomp.downcase
-
+				#it will not accept 
 				while play_again != 'y'	&& play_again != 'n'
 					puts "Invlaid command."
 					puts "Would you like to play again? [y/n]"

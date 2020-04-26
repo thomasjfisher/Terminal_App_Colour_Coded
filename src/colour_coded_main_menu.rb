@@ -1,3 +1,4 @@
+#Calling game code ^
 require_relative 'colour_coded.rb'
 
 
@@ -9,6 +10,7 @@ require 'lolize/auto'
 
 cursor = TTY::Cursor
 
+#defining how to clear the terminal
 def clear_terminal
 	Gem.win_platform? ? (system "cls") : (system "clear")
 	
@@ -19,6 +21,7 @@ end
 
 
 clear_terminal
+puts "Welcome to"
 puts "
 		 ____ ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ 
 		||C |||O |||L |||O |||U |||R |||       |||C |||O |||D |||E |||D ||
@@ -68,13 +71,16 @@ while user_main_menu_select !=3
         puts "The aim of the game is to remember the sequence of words displayed across your screen"
         sleep 3
         puts
-        puts "You have 3 attempts to input your guess correctly"
+        puts "              You have 3 attempts to input your guess correctly"
+        sleep 3
+        puts      
+        puts "         If you  do not guess the sequence correctly, after 3 wrong guesses"
         sleep 3
         puts
-        puts "If you unfortunately do not guess the sequence correctly, after 3 wrong guesses"
+        puts "        the game will end, and you will be asked if you would like to play again."
         sleep 3
         puts
-        puts "the game will end, and you will be asked if you would like to play again."
+        puts "              If you enter the words correctly, after 5 rounds, you win!"
         sleep 10
         clear_terminal
         
