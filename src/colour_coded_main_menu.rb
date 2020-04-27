@@ -92,7 +92,7 @@ clear_terminal
         sleep 1
         exit
     else
-        clear_terminal
+        puts
         puts "Please enter a valid selection: [1,2,3]"
         sleep 2
         
