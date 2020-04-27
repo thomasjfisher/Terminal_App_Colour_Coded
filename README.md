@@ -1,12 +1,10 @@
 # Welcome to Colour Coded
 
-## Table of Contents
-
 ## Software Development Plan
 
 ### Statement of Purpose
 
-Colour Coded has been designed to entertain you and brighten up your day! It is a fun memory game which requires you to be alert and pay attention when playing! Its a great way to help cheer you up, and also a great way keep your mind sharp and most importantly, have fun!
+Colour Coded has been designed to entertain the user and brighten up their day! It is a fun memory game which requires users to be alert and pay attention when playing! Its a great way to help cheer you up, and also a great way keep your mind sharp and most importantly, have fun!
 
 I created Colour Coded after only coding for 4 weeks! I am incredibly proud of what I have achieved in the given time frame of 1 week in order to complete Colour Coded. In doing so, I have learned so many new skills which have helped me to becoming a better developer.
 
@@ -16,10 +14,10 @@ When you launch the game, you will be welcomed at the main menu. There it will g
 
 1. Selecting 1 will let you play Colour Coded. If you are a returning player and are familiar with Colour Coded, then you can jump straight in to the fun!
 
-2. Selecting 2 will lead you to read the rules. If you are a first time player, we highly recommend viewing the rules page to familiarise yourself with Colour Coded.
-3. Will allow you to exit the program.
+2. Selecting 2 will let you to read the rules. If you are a first time player, we highly recommend viewing the rules page to familiarise yourself with Colour Coded.
+3. Selecting 3 will exit the program.
 
-When launching the game, it will greet you, get your name, and get you ready to play! It will then ask the user if they want to play. If the user hits 'y', the game will begin. If the user hits 'n', the game will exit. When launched, there will be a coloured word that you will be required to remember. It will flash on the screen for a short period of time, then the screen will be wiped. The user will then be prompted to enter their guess! Sounds easy right? Of course! All you have to do is remember to remember! When the word is guessed correctly, the user will get a randomised message congratulating them. After that, the screen is again cleared and then two words will appear on the screen, and then the words will be wiped. Again, the user will be prompted to enter their guess of what the coloured words were. This will continue until  5 words have been guessed correctly in a row, or if the 3 guesses have been used up. This app will solve all your boredom and stimulate your brain, all whilst filling the user with colourful joy!
+When launching the game, it will greet you, get your name, and ask if you are ready to play! If the user hits 'y', the game will begin. If the user hits 'n', the game will exit out of the application. When 'y' is pressed, there will be a coloured word that you will be required to remember. It will flash on the screen for a short period of time, then the screen will be wiped. Then you will then be prompted to enter their guess! Sounds easy right? Of course! All you have to do is remember to remember! When the word is guessed correctly, there will be a randomised message congratulating them. After that, the screen is again cleared and then two words will appear on the screen, and then the words will be wiped. Again, the user will be prompted to enter their guess of what the coloured words were. This will continue until  5 words have been guessed correctly in a row, or if the 3 guesses have been used up. This app will solve all your boredom and stimulate your brain, all whilst filling the user with colourful joy!
 
 #### Target Audience 
 
@@ -33,7 +31,7 @@ Colour Coded will be launched from an executable file. It will install the gems 
 
 #### Feature 1
 
-The main feature in Colour Coded, is the randomly generated coloured words. The code is written so that the coloured words printed to the screen will not repeat. In doing this, it is increasing the difficulty of Colour Coded. We have incorporated colour on top of colour, loops within loops, in order to make this game, not only as enjoyable as possible, but also slightly difficult for the users! By making the words appear in various colours, and then getting the user to type out the coloured words in order, Colour Coded is stimulating the brain and the short term memory function! How good is that? You're having fun, learning AND improving your brain function! In order to make sure this feature worked, I did a lot of manual testing, incorporated the use of class methods, loops and variables. Overall it has helped in making a smooth running game.
+The main feature in Colour Coded, is the randomly generated coloured words. The code is written so that the coloured words printed to the screen will not repeat. In doing this, it is increasing the difficulty of Colour Coded. We have incorporated colour on top of colour, loops within loops and various other methods in order to make this game, not only as enjoyable as possible, but also slightly difficult for the users! By making the words appear in various colours, and then getting the user to type out the coloured words in order, Colour Coded is stimulating the brain and the short term memory function! How good is that? You're having fun, learning AND improving your brain function! In order to make sure this feature worked, I did a lot of manual testing, incorporated the use of class methods, loops and variables. Overall it has helped in making a smooth running game.
 
 #### Feature 2
 
@@ -111,19 +109,25 @@ Another method I used when manually testing, was to assign a true value to a var
 
 
 
+|          Feature           |                          What it is                          |                       Expected Outcome                       |                        Actual Outcome                        | Is it a Problem? |
+| :------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :--------------: |
+|      Welcome message       | Welcome, get ready ascii art.<br />Generated from a ruby gem. | Words I input would print to screen in the ascii art style.  |                     Working as intended                      |        No        |
+|       Welcome Screen       | User will input 1, 2, or 3 to select play game, read rules or quit | Loop while the user does not enter those numbers, until valid input is passed. |                     Working as intended                      |        No        |
+|        Random words        |            Words are generated and put to screen.            |      The words will not repeat themselves. ie 'red red'      |                     Working as intended                      |                  |
+|      Colour of words       |    Using ruby gem 'colorize' to generate colour of words.    |               Words will be different colours.               | Using 'colorize' grouped the words into the same colour. So 'red green pink' were all displayed in the one colour, not individual colours as expected |       Yes!       |
+|    Colour of words 2.0     | Using ruby gem 'lolize'. This turns the program into rainbow colour. |                    Creating colourful GUI                    |                     Working as intended                      |        No        |
+|           Rules            |                      Display game rules                      |          Prints to screen my rules of how to play.           |                     Working as intended                      |        No        |
+|         Play Game          |                    Launches Colour Coded                     |              Selecting 1 will launch them game               |                     Working as intended                      |        No        |
+|            Quit            |                          Quit/exit                           |                        Quit the game                         |                     Working as intended                      |        No        |
+|         Game Over          |               Message displayed when Game Over               |                      Display Game Over                       |                     Working as intended                      |        No        |
+|          You win!          |                Message displayed when You win                |                       Display You win!                       |                     Working as intended                      |        No        |
+|         Play Again         | Message will display and ask if you would like to play again | Hitting y will loop game, n will quit and any other command is invalid, so will loop |                     Working as intended                      |        No        |
+| Generate random come backs | Generate random come backs when the user inputs a correct guess | There is an array of comebacks which shuffle and then prints 1 of them when the user guesses correctly |                     Working as intended                      |        No        |
 
 
 
+# Author
 
+#### Thomas Fisher
 
-
-
-
-
-
-
-
-
-
-
-
+https://github.com/thomasjfisher/Terminal_App_Colour_Coded
