@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # Pseudo Code:
 
 # 1. menu ->  Instructions to play the game, explaining what the game is and how can the exit game

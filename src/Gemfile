@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
 # gem "rails"
 
-gem "lolize", "~> 0.0.3"
+gem 'lolize', '~> 0.0.3'
 
-gem "artii", "~> 2.1"
+gem 'artii', '~> 2.1'
 
-gem "test-unit", "~> 3.3"
+gem 'test-unit', '~> 3.3'
+
+gem "rubocop", "~> 0.82.0"
