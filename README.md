@@ -1,8 +1,10 @@
 # Welcome to Colour Coded
 
+## [toc]
+
 ## Software Development Plan
 
-## Statement of Purpose
+### Statement of Purpose
 
 Colour Coded has been designed to entertain you and brighten up your day! It is a fun memory game which requires you to be alert and pay attention when playing! Its a great way to help cheer you up, and also a great way keep your mind sharp and most importantly, have fun!
 
@@ -97,7 +99,33 @@ The first update that I came across, was from day 1. When we were told that we w
 
 The second update for my code was on Saturday 25th April. I was using the ruby gem 'colorize' to give various colours to my app. However, the issue that I ran in to, was that when I would randomly generate a word from my array, the code would cross check it with 'colorize', to make sure that the coloured words, and the matching colour that 'colorize' would change it to, were not the same. It would then print to the screen. However, because I was grouping the words together, and then calling 'colorize', the words would all print out the same colour, which is not what I wanted. I searched google looking for answers, and then I came upon a ruby gem called 'lolize'. I installed it to see how it looked, and instantly my app came to life. This is exactly what I saw Colour Coded looking like in my head. So I replaced 'colorize' with 'lolize' and have no regrets. Looking back now, I could have created a method in which I could have named and assigned a colour from 'colorize' separately.
 
-## Help File
+## Testing
+
+I manually tested Colour Coded, checking for valid user inputs and then making sure that the code would not progress unless it had an answer that it wanted. If for example
+
+![Error Handling in code](https://github.com/thomasjfisher/Terminal_App_Colour_Coded/blob/master/docs/Colour_Coded_Error_Handling.jpg)
+
+I used this method many times to check the user input and make sure that it is a valid response so that the code can act accordingly.
+
+Another method I used when manually testing, was to assign a true value to a variable, DEBUG. When set to a true value, I gave DEBUG many jobs. Mainly, I stopped it from clearing the terminal, so that I could see what was being printed to the screen. Another job I assigned to DEBUG, is to stop the code from executing 'sleep'. What 'sleep' does, is makes the code pause for an amount of time that you assign it. Now, when looping through a memory game, and not only having the terminal clear on you, but also pause when you are trying to work out errors, is more than enough to cause a headache. The most impressive job that I assigned to DEBUG, was assigning it the value of `user_input = word`. Now, what this let me do, is speed through my code to debug. No matter what word I entered when the code asked me for my guess, it would always return my input to be true! Pretty neat! What a time saver!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
