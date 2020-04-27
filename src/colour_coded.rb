@@ -89,8 +89,9 @@ module ColourCodedGame
       tom_sleep 1
       puts
       clear_terminal
-      puts 'Remember to remember...'
-
+			puts 'Remember to remember...'
+			
+			#used DEBUG here to show me the counters when testing.
       if DEBUG
         p counter
         p wrong_answer
@@ -143,7 +144,7 @@ module ColourCodedGame
       puts 'Would you like to play again? [y/n]'
       puts
       play_again = gets.chomp.downcase
-      # it will not accept
+      # it will not accept anything but 'y' and 'n'
       while play_again != 'y'	&& play_again != 'n'
         puts 'Invlaid command.'
         puts 'Would you like to play again? [y/n]'
@@ -155,7 +156,8 @@ module ColourCodedGame
         counter = 0
         wrong_answer = 0
         guess_count = 1
-      elsif play_again != 'y'
+			elsif play_again != 'y'
+				puts
         puts 'Thanks for playing'
         puts
         cc_keyboard

@@ -1,68 +1,39 @@
-# frozen_string_literal: true
-
 require 'test/unit'
 
-# class CustomerTest < Test::Unit::TestCase
-#   def test_first_name
-#     customer = Customer.new('John', 'Smith')
-#     assert_equal('John', customer.test_first_name)
-#   end
-# end
+class UserSelect < Test::Unit::TestCase  
 
-# def menu_selection
-#     puts "What would you like to do?"
-#     puts "1. Play Game"
-#     puts "2. Read Rules"
-#     puts "3. Quit"
-#     puts "Please enter your selection: [1,2,3]"
-#     print '>'
-#     selection = gets.chomp
-#     validate_select(selection)
-#     rescue InvalidInputError => e
-#       puts "Invalid command. Try again."
-#     retry
-#   end
+  def test_play  
+    user_select = do_user_input(1) 
+    assert_equal('play',user_select)
+  end
+  def test_rules
+    user_select = do_user_input(2)
+    assert_equal('rules',user_select)
+  end
+  def test_quit
+    user_select = do_user_input(3)
+    assert_equal('quit',user_select)
+  end
+  def test_invalid_response
+    user_select = do_user_input("yes")
+    assert_equal("Invalid", user_select)
+    user_select = do_user_input("3")
+    assert_not_equal("Invalid", user_select)
+  end
 
-# user_selection = menu_selection
+end
 
-# def ask_for_name
-#   # 1. Ask for user input
-#   puts 'Please enter your name:'
-#   print '> '
-#   name = gets.chomp
-#   # 2. Validate and return name
-#   validate_name(name)
-#  rescue InvalidNameError => e
-#   # 3. validate_name() raised error!
-#   puts 'Invalid name. Please try again.'
-#   retry # Go back to 1.
-#  end
-#  username = ask_for_name
+def do_user_input(user_main_menu_select)
+  user_main_menu_select = user_main_menu_select.to_i
 
-# end
-# user_main_menu_select = ""
-# while user_main_menu_select !=3
-
-#     puts "What would you like to do?"
-#     puts "1. Play Game"
-#     puts "2. Read Rules"
-#     puts "3. Quit"
-#     puts "Please enter your selection: [1,2,3]"
-
-# user_main_menu_select = gets.to_i
-# sleep 1
-
-# if user_main_menu_select == 1
-#   puts "play"
-
-# elsif user_main_menu_select == 2
-
-#   puts "display rules"
-
-# elsif user_main_menu_select == 3
-#     puts "Goodbye from"
-# else
-#     puts "Please enter a valid selection: [1,2,3]"
-#     sleep 2
-# end
-# end
+  if user_main_menu_select == 1
+    return "play"
+  elsif user_main_menu_select == 2
+    return "rules"
+  elsif user_main_menu_select == 3
+    return 'quit'
+   
+    else
+    return "Invalid"
+  end
+end

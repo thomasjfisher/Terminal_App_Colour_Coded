@@ -40,7 +40,7 @@ Sit back, relax, and enjoy Colour Coded!
 
 ### Features
 
-- [X] Colour Coded has a bright colourful and joyful Graphical User Interface(GUI) 
+- [x] Colour Coded has a bright colourful and joyful Graphical User Interface(GUI) 
 
 - [x] User friendly game play
 - [x] Keeps your mind agile and sharp, whilst having fun!
