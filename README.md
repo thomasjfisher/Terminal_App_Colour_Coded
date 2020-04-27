@@ -1,6 +1,8 @@
 # Welcome to Colour Coded
 
-## [toc]
+## Table of Contents
+
+[TOC]
 
 ## Software Development Plan
 
@@ -108,8 +110,6 @@ I manually tested Colour Coded, checking for valid user inputs and then making s
 I used this method many times to check the user input and make sure that it is a valid response so that the code can act accordingly.
 
 Another method I used when manually testing, was to assign a true value to a variable, DEBUG. When set to a true value, I gave DEBUG many jobs. Mainly, I stopped it from clearing the terminal, so that I could see what was being printed to the screen. Another job I assigned to DEBUG, is to stop the code from executing 'sleep'. What 'sleep' does, is makes the code pause for an amount of time that you assign it. Now, when looping through a memory game, and not only having the terminal clear on you, but also pause when you are trying to work out errors, is more than enough to cause a headache. The most impressive job that I assigned to DEBUG, was assigning it the value of `user_input = word`. Now, what this let me do, is speed through my code to debug. No matter what word I entered when the code asked me for my guess, it would always return my input to be true! Pretty neat! What a time saver!
-
-
 
 
 
