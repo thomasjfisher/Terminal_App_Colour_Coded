@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-[toc]
+[TOC]
 
 ## Software Development Plan
 
