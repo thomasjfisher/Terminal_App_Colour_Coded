@@ -1,9 +1,6 @@
-#Calling game code ^
+#Calling game code 
 require_relative 'colour_coded.rb'
 
-
-require 'tty-prompt'
-require 'tty-cursor'
 require 'lolize/auto'
 
 cursor = TTY::Cursor
