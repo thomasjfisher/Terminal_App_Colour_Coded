@@ -165,6 +165,11 @@ module ColourCodedGame
 					puts "Thanks for playing"
 					puts
 					cc_keyboard
+					puts
+					tom_sleep 1
+					puts
+					tom_sleep 1
+					puts
 					tom_sleep 5
 					exit
 				end	
