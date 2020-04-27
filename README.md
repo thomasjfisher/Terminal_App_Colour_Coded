@@ -51,3 +51,27 @@ The user will be able to launch Colour Coded as an executable file, or run the f
 
 ![Main Menu](https://github.com/thomasjfisher/Terminal_App_Colour_Coded/blob/master/docs/Colour_Coded_User_Interaction_MainMenu.jpg)
 
+If the user selects option 1, Play, it will launch into the game, and ask your name, and if you are ready to start. If the user selects option 2, it will show the the rules of the game. If option 3 is selected, it will exit the game.
+
+Option 1.
+
+![Ready to start?](https://github.com/thomasjfisher/Terminal_App_Colour_Coded/blob/master/docs/Colour_Coded_Start_Prompt.jpg)
+
+Option 2.
+
+![Rules](https://github.com/thomasjfisher/Terminal_App_Colour_Coded/blob/master/docs/Colour_Coded_Rules.jpg)
+
+So, from here, the user will play through the game, you will be asked to remember the sequence of words. After 5 rounds of inputting the correct sequence, you win! You will then be prompted to play again. If, however, you do not guess the sequence correctly, after 3 incorrect guesses in a row, it is game over! Again, you will be prompted if you would like to play again.
+
+You won!
+
+![You won!](https://github.com/thomasjfisher/Terminal_App_Colour_Coded/blob/master/docs/Colour_Coded_You_Won_Play_Again.jpg)
+
+Game Over
+
+![Game Over](https://github.com/thomasjfisher/Terminal_App_Colour_Coded/blob/master/docs/Colour_Coded_Game_Over_Play_Again.jpg)
+
+If you decide to quit, the user will receive a message from Colour Coded thanking them for playing.
+
+![Thank you](https://github.com/thomasjfisher/Terminal_App_Colour_Coded/blob/master/docs/Colour_Coded_TY.jpg)
+
