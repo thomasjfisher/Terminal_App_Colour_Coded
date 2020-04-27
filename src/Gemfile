@@ -9,3 +9,5 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 gem "lolize", "~> 0.0.3"
 
 gem "artii", "~> 2.1"
+
+gem "test-unit", "~> 3.3"

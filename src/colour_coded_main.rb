@@ -24,7 +24,7 @@ clear_terminal
     sleep 2
     puts
     
-    
+    #whilst user input is !=3, this will loop
     user_main_menu_select = ""
     while user_main_menu_select !=3    
         

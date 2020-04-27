@@ -1,5 +1,5 @@
-require 'tty-prompt'
 require 'tty-cursor'
+require 'artii'
 require 'lolize/auto'
 
 

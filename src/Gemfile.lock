@@ -5,6 +5,9 @@ GEM
     lolize (0.0.3)
       paint (~> 0.8.3)
     paint (0.8.7)
+    power_assert (1.2.0)
+    test-unit (3.3.5)
+      power_assert
 
 PLATFORMS
   ruby
@@ -12,6 +15,7 @@ PLATFORMS
 DEPENDENCIES
   artii (~> 2.1)
   lolize (~> 0.0.3)
+  test-unit (~> 3.3)
 
 BUNDLED WITH
    2.1.4
