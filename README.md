@@ -2,7 +2,7 @@
 
 ## Software Development Plan
 
-### Statement of Purpose
+## Statement of Purpose
 
 Colour Coded has been designed to entertain you and brighten up your day! It is a fun memory game which requires you to be alert and pay attention when playing! Its a great way to help cheer you up, and also a great way keep your mind sharp and most importantly, have fun!
 
@@ -74,4 +74,34 @@ Game Over
 If you decide to quit, the user will receive a message from Colour Coded thanking them for playing.
 
 ![Thank you](https://github.com/thomasjfisher/Terminal_App_Colour_Coded/blob/master/docs/Colour_Coded_TY.jpg)
+
+## Control Flow Diagram
+
+Below is the Flow Chart for Colour Coded. In it, it clearly shows the functions and processes that are taken with the app.
+
+![Colour Coded Flow Chart](https://github.com/thomasjfisher/Terminal_App_Colour_Coded/blob/master/docs/Colour_Coded_Flow_Chart.jpg)
+
+## Implementation Plan
+
+Below is a link to my Trello page. I started on Tuesday 21th April by writing out plans to create my README.md file, constructed my list of 3 features and writing out some pseudo code. I Originally began working on another app idea I had, called Twogether. However, in the weeks time that we had, and what I thought was accomplishable, I stopped that, and confirmed that I would go ahead with Colour Coded. I am not disappointed. I gave myself until 5pm on Wednesday 22nd April to have the README.md and the list of features done, and allowed myself until Friday the 24th to have the pseudo code finalised and and begin coding, as these were my main priorities.  Then I took some more time over the weekend to think about what sort of features that I wanted to implement to Colour Coded in the future. I have set myself a time frame of 1 month, as this is a project that I am incredibly proud of and will work on so that I can make it the best that it can be! The long term goal here, is to have it in a store online to share with the world.
+
+![Trello](https://github.com/thomasjfisher/Terminal_App_Colour_Coded/blob/master/docs/Colour_Coded_Trello.jpg)
+
+## Status Updates
+
+### Status Update #1
+
+The first update that I came across, was from day 1. When we were told that we were to create an app within the given time frame of a week, my first reaction was excitement. I love gaming. I love coding. What better way to combine the two things I love! I had many ideas running through my head. I could redo 'Snake', or 'Pong'. But my original ideas took over. I was drawn more to them than to the redevelopment of other games. I wanted to make a memory game. I wanted to incorporate fun, but also test the skills of the user. It was a close tie between Colour Coded, and another app idea I had called Twogether. Twogether pulled ahead, but only just. It was to be a card matching game. I ran into many issues of how to construct this game within ruby, within the given time frame. Upon reflection with my teacher, I reassessed. In order to create an app that worked, but also an app that I had time to work on, I decided to go with Colour Coded. This was on day 1 that I was tossing up between both, but finalised to go with Colour Coded. I am incredibly glad that I chose Colour Coded.
+
+### Status Update #2
+
+The second update for my code was on Saturday 25th April. I was using the ruby gem 'colorize' to give various colours to my app. However, the issue that I ran in to, was that when I would randomly generate a word from my array, the code would cross check it with 'colorize', to make sure that the coloured words, and the matching colour that 'colorize' would change it to, were not the same. It would then print to the screen. However, because I was grouping the words together, and then calling 'colorize', the words would all print out the same colour, which is not what I wanted. I searched google looking for answers, and then I came upon a ruby gem called 'lolize'. I installed it to see how it looked, and instantly my app came to life. This is exactly what I saw Colour Coded looking like in my head. So I replaced 'colorize' with 'lolize' and have no regrets. Looking back now, I could have created a method in which I could have named and assigned a colour from 'colorize' separately.
+
+## Help File
+
+
+
+
+
+
 
