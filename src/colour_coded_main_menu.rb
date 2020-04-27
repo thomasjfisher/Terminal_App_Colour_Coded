@@ -1,7 +1,8 @@
 #Calling game code 
 require_relative 'colour_coded.rb'
-
 require 'lolize/auto'
+require 'artii'
+
 
 cursor = TTY::Cursor
 
@@ -11,7 +12,13 @@ def clear_terminal
 	
 end
 
-    clear_terminal
+a = Artii::Base.new
+puts a.asciify('Welcome!')
+puts a.asciify('Get Ready')
+sleep 2
+
+clear_terminal
+
     puts "Welcome to"
     puts "
              ____ ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ 

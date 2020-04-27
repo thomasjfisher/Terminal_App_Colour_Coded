@@ -1,7 +1,7 @@
 require 'tty-prompt'
 require 'tty-cursor'
-require 'launchy'
 require 'lolize/auto'
+
 
 module ColourCodedGame
 	def grats
