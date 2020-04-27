@@ -24,6 +24,10 @@ module ColourCodedGame
 		|/__\\|/__\\|/__\\|/__\\|/__\\|/__\\|/_______\\|/__\\|/__\\|/__\\|/__\\|/__\\|"
 	end
 
+#used debug to move through the code faster when trying to debug, it held the sleeps and clear_terminals.
+#when set to nil, the code will run as normal. if given a true value the code will skip certain parts.
+DEBUG = nil
+
 	def tom_sleep(number)
 		if DEBUG
 			return
@@ -31,13 +35,6 @@ module ColourCodedGame
 		sleep(number)
 		puts
 	end
-
-
-
-
-#used debug to move through the code faster when trying to debug, it held the sleeps and clear_terminals.
-#when set to nil, the code will run as normal. if given a true value the code will skip certain parts.
-	DEBUG = nil
 
 	def run_game
 		# This command below is allowing me to call to clear my terminal.
