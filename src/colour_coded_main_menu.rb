@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Calling game code
 require_relative 'colour_coded.rb'
 require 'lolize/auto'
