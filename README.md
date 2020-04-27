@@ -49,20 +49,5 @@ The 3rd feature that I am really proud of in Colour Coded, is the Graphical User
 
 The user will be able to launch Colour Coded as an executable file, or run the file it in the CLI. They will be greeted by the Main Menu, where they will be given options to Play, Read Rules, or Quit.
 
-![(https://github.com/thomasjfisher/Terminal_App_Colour_Coded/blob/master/docs/Colour_Coded_User_Interaction_MainMenu.jpg)]
-
-![(https://github.com/thomasjfisher/Terminal_App_Colour_Coded/blob/master/docs/Colour_Coded_User_Interaction_MainMenu.jpg)]()
-
-
-
-
-
-
-
-
-
-![image]((https://github.com/thomasjfisher/Terminal_App_Colour_Coded/blob/master/docs/Colour_Coded_User_Interaction_MainMenu.jpg)
-
-
-
+![Main Menu](https://github.com/thomasjfisher/Terminal_App_Colour_Coded/blob/master/docs/Colour_Coded_User_Interaction_MainMenu.jpg)
 
