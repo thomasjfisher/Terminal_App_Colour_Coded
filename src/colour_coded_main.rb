@@ -3,22 +3,18 @@ require_relative 'colour_coded.rb'
 require 'lolize/auto'
 require 'artii'
 
-
-cursor = TTY::Cursor
-
 #defining how to clear the terminal
 def clear_terminal
-	Gem.win_platform? ? (system "cls") : (system "clear")
-	
+	Gem.win_platform? ? (system "cls") : (system "clear")	
 end
 
+#calling my artii to asciify my welcome and get ready message
 a = Artii::Base.new
 puts a.asciify('Welcome!')
 puts a.asciify('Get Ready')
 sleep 2
 
 clear_terminal
-
     puts "Welcome to"
     puts "
              ____ ____ ____ ____ ____ ____ _________ ____ ____ ____ ____ ____ 
